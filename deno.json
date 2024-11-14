@@ -1,0 +1,37 @@
+{
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"lib": [
+			"deno.ns",
+			"dom"
+		]
+	},
+	"fmt": {
+		"indentWidth": 4,
+		"lineWidth": 80,
+		"proseWrap": "preserve",
+		"semiColons": false,
+		"singleQuote": true,
+		"useTabs": true
+	},
+	"imports": {
+		"@types/react": "npm:@types/react@18.3.12",
+		"@types/react-dom": "npm:@types/react-dom@18.3.1",
+		"@vitejs/plugin-react": "npm:@vitejs/plugin-react@4.3.3",
+		"react": "npm:react@18.3.1",
+		"react-dom": "npm:react-dom@18.3.1",
+		"vite": "npm:vite@5.4.11"
+	},
+	"lint": {
+		"exclude": [
+			".vite/"
+		]
+	},
+	"nodeModulesDir": "auto",
+	"tasks": {
+		"build": "tsc -b && vite build",
+		"dev": "vite",
+		"preview": "vite preview"
+	},
+	"version": "0.0.1"
+}
