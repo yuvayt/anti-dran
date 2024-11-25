@@ -1,8 +1,12 @@
 {
-	"name": "Deno",
+	"name": "deno",
+
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
+
+	"workspaceFolder": "/workspaces/anti-dran-ws",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/anti-dran-ws,type=bind",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -15,16 +19,24 @@
 
 	// Configure tool-specific properties.
 	"customizations": {
-		"vscode": {
-			"extensions": [
-				"justjavac.vscode-deno-extensionpack"
-			]
-		},
 		"settings": {
 			"deno.enable": true,
-			"deno.lint": true
+			"deno.lint": true,
+			"editor.formatOnSave": true,
+			"editor.defaultFormatter": "denoland.vscode-deno"
+		},
+		"vscode": {
+			"extensions": [
+				"streetsidesoftware.code-spell-checker",
+				"denoland.vscode-deno"
+			]
 		}
-	}
+	},
+
+	"mounts": [
+		"source=node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+	],
+
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+	"remoteUser": "root"
 }
